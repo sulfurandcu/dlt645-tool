@@ -1,0 +1,3396 @@
+{
+    "标准协议": [
+        {
+            "id": "03030000",
+            "name": "《标准协议》过压记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "Ａ相过压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ａ相过压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｂ相过压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｂ相过压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｃ相过压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｃ相过压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                }
+            ]
+        },
+        {
+            "id": "03030101",
+            "name": "《标准协议》过压记录（Ａ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "过压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03030201",
+            "name": "《标准协议》过压记录（Ｂ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "过压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03030301",
+            "name": "《标准协议》过压记录（Ｃ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "过压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "过压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "过压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "过压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03020000",
+            "name": "《标准协议》欠压记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "Ａ相欠压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ａ相欠压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｂ相欠压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｂ相欠压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｃ相欠压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｃ相欠压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                }
+            ]
+        },
+        {
+            "id": "03020101",
+            "name": "《标准协议》欠压记录（Ａ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "欠压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03020201",
+            "name": "《标准协议》欠压记录（Ｂ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "欠压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03020301",
+            "name": "《标准协议》欠压记录（Ｃ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "欠压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "欠压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "欠压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "欠压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03010000",
+            "name": "《标准协议》失压记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "Ａ相失压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ａ相失压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｂ相失压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｂ相失压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｃ相失压总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｃ相失压总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                }
+            ]
+        },
+        {
+            "id": "03010101",
+            "name": "《标准协议》失压记录（Ａ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "失压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03010201",
+            "name": "《标准协议》失压记录（Ｂ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "失压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03010301",
+            "name": "《标准协议》失压记录（Ｃ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "失压期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "失压时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "失压期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "失压期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03040000",
+            "name": "《标准协议》断相记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "Ａ相断相总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ａ相断相总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｂ相断相总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｂ相断相总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                },
+                {
+                    "name": "Ｃ相断相总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "Ｃ相断相总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                }
+            ]
+        },
+        {
+            "id": "03040101",
+            "name": "《标准协议》断相记录（Ａ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "断相期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03040201",
+            "name": "《标准协议》断相记录（Ｂ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "断相期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03040301",
+            "name": "《标准协议》断相记录（Ｃ相）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "断相期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ａ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ａ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ａ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ａ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ａ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ｂ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）电压",
+                    "type": "bcd",
+                    "data": "XXX.X",
+                    "unit": "V"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）电流",
+                    "type": "bcd",
+                    "data": "XXX.XXX",
+                    "unit": "A"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）有功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kW"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）无功功率",
+                    "type": "bcd",
+                    "data": "XX.XXXX",
+                    "unit": "kvar"
+                },
+                {
+                    "name": "断相时刻（Ｃ相）功率因数",
+                    "type": "bcd",
+                    "data": "X.XXX",
+                    "unit": ""
+                },
+                {
+                    "name": "断相期间（合相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ａ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ｂ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                },
+                {
+                    "name": "断相期间（Ｃ相）安时数",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "Ah"
+                }
+            ]
+        },
+        {
+            "id": "03090000",
+            "name": "《标准协议》电压失衡记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "电压失衡总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "电压失衡总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                }
+            ]
+        },
+        {
+            "id": "03090001",
+            "name": "《标准协议》电压失衡记录",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "最大失衡率",
+                    "type": "bcd",
+                    "data": "XX.XX",
+                    "unit": "%"
+                },
+                {
+                    "name": "电压失衡期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电压失衡期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电压失衡期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电压失衡期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电压失衡期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电压失衡期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电压失衡期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电压失衡期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电压失衡期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                }
+            ]
+        },
+        {
+            "id": "030A0000",
+            "name": "《标准协议》电流失衡记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "电流失衡总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                },
+                {
+                    "name": "电流失衡总时间",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "分"
+                }
+            ]
+        },
+        {
+            "id": "030A0001",
+            "name": "《标准协议》电流失衡记录",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "结束时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "最大失衡率",
+                    "type": "bcd",
+                    "data": "XX.XX",
+                    "unit": "%"
+                },
+                {
+                    "name": "电流失衡期间（合相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（合相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（合相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电流失衡期间（合相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电流失衡期间（Ａ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（Ａ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（Ａ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电流失衡期间（Ａ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电流失衡期间（Ｂ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（Ｂ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（Ｂ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电流失衡期间（Ｂ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电流失衡期间（Ｃ相）正向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（Ｃ相）反向有功电能增量",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电流失衡期间（Ｃ相）组合无功电能增量（c1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电流失衡期间（Ｃ相）组合无功电能增量（c2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                }
+            ]
+        },
+        {
+            "id": "03300100",
+            "name": "《标准协议》电表清零记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "电表清零总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                }
+            ]
+        },
+        {
+            "id": "03300101",
+            "name": "《标准协议》电表清零记录",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "操作代码",
+                    "type": "raw",
+                    "data": "XXXXXXXX",
+                    "unit": ""
+                },
+                {
+                    "name": "电表清零之前（合相）正向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（合相）反向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（合相）象限无功电能（q1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（合相）象限无功电能（q2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（合相）象限无功电能（q3）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（合相）象限无功电能（q4）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ａ相）正向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（Ａ相）反向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（Ａ相）象限无功电能（q1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ａ相）象限无功电能（q2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ａ相）象限无功电能（q3）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ａ相）象限无功电能（q4）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｂ相）正向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（Ｂ相）反向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（Ｂ相）象限无功电能（q1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｂ相）象限无功电能（q2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｂ相）象限无功电能（q3）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｂ相）象限无功电能（q4）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｃ相）正向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（Ｃ相）反向有功电能",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kWh"
+                },
+                {
+                    "name": "电表清零之前（Ｃ相）象限无功电能（q1）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｃ相）象限无功电能（q2）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｃ相）象限无功电能（q3）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "电表清零之前（Ｃ相）象限无功电能（q4）",
+                    "type": "bcd",
+                    "data": "XXXXXX.XX",
+                    "unit": "kvarh"
+                }
+            ]
+        },
+        {
+            "id": "03300300",
+            "name": "《标准协议》事件清零记录统计数据",
+            "type": "block",
+            "data": [
+                {
+                    "name": "事件清零总次数",
+                    "type": "bcd",
+                    "data": "XXXXXX",
+                    "unit": "次"
+                }
+            ]
+        },
+        {
+            "id": "03300301",
+            "name": "《标准协议》事件清零记录",
+            "type": "block",
+            "data": [
+                {
+                    "name": "发生时刻",
+                    "type": "time",
+                    "data": "YYMMDDhhmmss"
+                },
+                {
+                    "name": "操作代码",
+                    "type": "raw",
+                    "data": "XXXXXXXX",
+                    "unit": ""
+                },
+                {
+                    "name": "事件标识",
+                    "type": "raw",
+                    "data": "XXXXXXXX",
+                    "unit": ""
+                }
+            ]
+        },
+        {
+            "null": null
+        }
+    ],
+    "扩展协议": [
+        {
+            "null": null
+        }
+    ]
+}

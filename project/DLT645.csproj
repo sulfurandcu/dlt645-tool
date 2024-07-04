@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <UseWPF>True</UseWPF>
+        <UseWindowsForms>True</UseWindowsForms>
+        <ApplicationIcon>..\code\icon48×48.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="..\code\icon48×48.ico" />
+        <Content Include="..\code\EBGaramond-Regular.ttf" CopyToOutputDirectory="PreserveNewest"/>
+        <Content Include="..\code\iosevka-fixed-slab-regular.ttf" CopyToOutputDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+        <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+        <PackageReference Include="System.Text.Json" Version="8.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ApplicationDefinition Include="..\code\App.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+            <Link>App.xaml</Link>
+        </ApplicationDefinition>
+        <Compile Include="..\code\App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+            <SubType>Code</SubType>
+            <Link>App.xaml.cs</Link>
+        </Compile>
+        <Compile Include="..\code\AssemblyInfo.cs">
+            <SubType>Code</SubType>
+            <Link>AssemblyInfo.cs</Link>
+        </Compile>
+
+        <Compile Include="..\code\BasicMVVM\ObservableObject.cs">
+            <SubType>Code</SubType>
+            <Link>BasicMVVM/ObservableObject.cs</Link>
+        </Compile>
+
+        <Compile Include="..\code\Interface\ITextBoxAppend.cs">
+            <SubType>Code</SubType>
+            <Link>Interface/ITextBoxAppend.cs</Link>
+        </Compile>
+
+        <Compile Include="..\code\Model\iPAC2220ECoreModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/iPAC2220ECoreModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\Model\DLT645CoreModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/DLT645CoreModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\Model\DLT645UserModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/DLT645UserModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\Model\SerialCommModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/SerialCommModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\Model\SerialPortModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/SerialPortModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\Model\SerialRecvModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/SerialRecvModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\Model\SerialSendModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/SerialSendModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\Model\SerialUtilModel.cs">
+            <SubType>Code</SubType>
+            <Link>Model/SerialUtilModel.cs</Link>
+        </Compile>
+
+        <Page Include="..\code\view\MainWindow.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+            <Link>View/MainWindow.xaml</Link>
+        </Page>
+        <Compile Include="..\code\view\MainWindow.xaml.cs">
+            <DependentUpon>View\MainWindow.xaml</DependentUpon>
+            <SubType>Code</SubType>
+            <Link>View/MainWindow.xaml.cs</Link>
+        </Compile>
+
+        <Page Include="..\code\view\About.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+            <Link>View/About.xaml</Link>
+        </Page>
+        <Compile Include="..\code\view\About.xaml.cs">
+            <DependentUpon>View\About.xaml</DependentUpon>
+            <SubType>Code</SubType>
+            <Link>View/About.xaml.cs</Link>
+        </Compile>
+
+        <Compile Include="..\code\ViewModel\MainWindowViewModel.cs">
+            <SubType>Code</SubType>
+            <Link>ViewModel/MainWindowViewModel.cs</Link>
+        </Compile>
+        <Compile Include="..\code\ViewModel\AboutWindowViewModel.cs">
+            <SubType>Code</SubType>
+            <Link>ViewModel/AboutWindowViewModel.cs</Link>
+        </Compile>
+
+    </ItemGroup>
+
+</Project>

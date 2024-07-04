@@ -1,0 +1,41 @@
+{
+    "标准协议": [
+        {
+            "id": "08C0C000",
+            "name": "《标准协议》清除拓扑信息",
+            "type": "hex",
+            "data": ""
+        },
+        {
+            "id": "08C0C001",
+            "name": "《标准协议》触发拓扑信号",
+            "type": "time",
+            "data": "YYMMDDhhmmss"
+        },
+        {
+            "id": "08C0C002",
+            "name": "《标准协议》查询拓扑信息",
+            "type": "block",
+            "data": [
+                {
+                    "name": "本次读取的记录条数",
+                    "type": "hex",
+                    "data": "XXXX"
+                },
+                {
+                    "name": "本次读取的起始序号",
+                    "type": "hex",
+                    "data": "XXXX"
+                }
+            ]
+        },
+        {
+            "null": null
+        }
+    ],
+    "扩展协议": [
+        {
+            "null": null
+        }
+    ]
+}

@@ -1,0 +1,330 @@
+{
+    "标准协议": [
+        {
+            "id": "00000000",
+            "name": "《标准协议》当前－合相－组合有功电能（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "00010000",
+            "name": "《标准协议》当前－合相－正向有功电能（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "00020000",
+            "name": "《标准协议》当前－合相－反向有功电能（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "00030000",
+            "name": "《标准协议》当前－合相－组合无功电能（c1）（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00040000",
+            "name": "《标准协议》当前－合相－组合无功电能（c2）（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00050000",
+            "name": "《标准协议》当前－合相－象限无功电能（q1）（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00060000",
+            "name": "《标准协议》当前－合相－象限无功电能（q2）（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00070000",
+            "name": "《标准协议》当前－合相－象限无功电能（q3）（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00080000",
+            "name": "《标准协议》当前－合相－象限无功电能（q4）（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00090000",
+            "name": "《标准协议》当前－合相－正向视在电能（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "id": "000A0000",
+            "name": "《标准协议》当前－合相－反向视在电能（总）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "id": "00150000",
+            "name": "《标准协议》当前－Ａ相－正向有功电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "00160000",
+            "name": "《标准协议》当前－Ａ相－反向有功电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "00170000",
+            "name": "《标准协议》当前－Ａ相－组合无功电能（c1）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00180000",
+            "name": "《标准协议》当前－Ａ相－组合无功电能（c2）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00190000",
+            "name": "《标准协议》当前－Ａ相－象限无功电能（q1）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "001A0000",
+            "name": "《标准协议》当前－Ａ相－象限无功电能（q2）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "001B0000",
+            "name": "《标准协议》当前－Ａ相－象限无功电能（q3）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "001C0000",
+            "name": "《标准协议》当前－Ａ相－象限无功电能（q4）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "001D0000",
+            "name": "《标准协议》当前－Ａ相－正向视在电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "id": "001E0000",
+            "name": "《标准协议》当前－Ａ相－反向视在电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "id": "00290000",
+            "name": "《标准协议》当前－Ｂ相－正向有功电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "002A0000",
+            "name": "《标准协议》当前－Ｂ相－反向有功电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "002B0000",
+            "name": "《标准协议》当前－Ｂ相－组合无功电能（c1）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "002C0000",
+            "name": "《标准协议》当前－Ｂ相－组合无功电能（c2）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "002D0000",
+            "name": "《标准协议》当前－Ｂ相－象限无功电能（q1）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "002E0000",
+            "name": "《标准协议》当前－Ｂ相－象限无功电能（q2）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "002F0000",
+            "name": "《标准协议》当前－Ｂ相－象限无功电能（q3）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00300000",
+            "name": "《标准协议》当前－Ｂ相－象限无功电能（q4）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00310000",
+            "name": "《标准协议》当前－Ｂ相－正向视在电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "id": "00320000",
+            "name": "《标准协议》当前－Ｂ相－反向视在电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "id": "003D0000",
+            "name": "《标准协议》当前－Ｃ相－正向有功电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "003E0000",
+            "name": "《标准协议》当前－Ｃ相－反向有功电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kWh"
+        },
+        {
+            "id": "003F0000",
+            "name": "《标准协议》当前－Ｃ相－组合无功电能（c1）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00400000",
+            "name": "《标准协议》当前－Ｃ相－组合无功电能（c2）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00410000",
+            "name": "《标准协议》当前－Ｃ相－象限无功电能（q1）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00420000",
+            "name": "《标准协议》当前－Ｃ相－象限无功电能（q2）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00430000",
+            "name": "《标准协议》当前－Ｃ相－象限无功电能（q3）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00440000",
+            "name": "《标准协议》当前－Ｃ相－象限无功电能（q4）",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kvarh"
+        },
+        {
+            "id": "00450000",
+            "name": "《标准协议》当前－Ｃ相－正向视在电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "id": "00460000",
+            "name": "《标准协议》当前－Ｃ相－反向视在电能",
+            "type": "bcd",
+            "data": "XXXXXX.XX",
+            "unit": "kVAh"
+        },
+        {
+            "null": null
+        }
+    ],
+    "扩展协议": [
+        {
+            "null": null
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

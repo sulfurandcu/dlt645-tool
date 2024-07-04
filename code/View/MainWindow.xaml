@@ -1,0 +1,1790 @@
+﻿<Window x:Class="DLT645.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:DLT645.View"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodel="clr-namespace:DLT645.ViewModel"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        Title="调试精灵（内置 DLT645 规则解析引擎｜支持在配置文件中自由修改数据标识）（😎）"
+        Width="1280"
+        Height="720"
+        MinWidth="640"
+        MinHeight="360"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal">
+    <Window.DataContext>
+        <viewmodel:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <Style x:Key="GeneralFontFamily">
+            <Setter Property="Control.FontFamily" Value="Couriew New, Microsoft YaHei UI" />
+        </Style>
+        <Style x:Key="GeneralSlabFontFamily">
+            <Setter Property="Control.FontFamily" Value="../#Iosevka Fixed Slab, Microsoft YaHei UI" />
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+
+        <!--  菜单栏  -->
+        <Border Height="20"
+                Background="GhostWhite"
+                BorderBrush="Gainsboro"
+                BorderThickness="1"
+                DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="文件">
+                    <MenuItem Header="新建" />
+                    <MenuItem Header="打开" />
+                    <MenuItem Header="保存" />
+                    <Separator />
+                    <MenuItem Click="MainWindow_AppRestart" Header="重启" />
+                    <MenuItem Click="MainWindow_AppExit" Header="退出" />
+                </MenuItem>
+                <MenuItem Header="编辑" />
+                <MenuItem Header="视图" />
+                <MenuItem Header="窗口" />
+                <MenuItem Header="工具" />
+                <MenuItem Header="选项" />
+                <MenuItem Header="帮助">
+                    <MenuItem Click="MainWindow_DocClick" Header="如何使用" />
+                    <MenuItem Click="MainWindow_AboutClick" Header="软件信息" />
+                </MenuItem>
+            </Menu>
+        </Border>
+
+        <!--  状态栏  -->
+        <Border Height="20"
+                Background="GhostWhite"
+                BorderBrush="Gainsboro"
+                BorderThickness="1"
+                DockPanel.Dock="Bottom">
+            <DockPanel HorizontalAlignment="Right">
+                <TextBlock Width="200"
+                           Margin="0,0"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Courier New"
+                           Text="{Binding ClockTimerStamp}"
+                           TextAlignment="Center" />
+                <TextBlock Width="200"
+                           Margin="5,0"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Courier New"
+                           Text="{Binding ClockTimerUTC_0}"
+                           TextAlignment="Center" />
+                <TextBlock Width="200"
+                           Margin="0,0"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontFamily="Courier New"
+                           Text="{Binding ClockTimerUTC_8}"
+                           TextAlignment="Center" />
+            </DockPanel>
+        </Border>
+
+        <!--  活动栏  -->
+        <Border Width="30"
+                Background="GhostWhite"
+                BorderBrush="Gainsboro"
+                BorderThickness="1"
+                DockPanel.Dock="Left" />
+
+        <!--  主界面  -->
+        <Border Background="GhostWhite"
+                BorderBrush="Gainsboro"
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <!--  侧边栏 左  -->
+                    <Border Width="200"
+                            Background="GhostWhite"
+                            BorderBrush="Gainsboro"
+                            BorderThickness="1"
+                            Style="{StaticResource GeneralSlabFontFamily}">
+                        <StackPanel Margin="10">
+                            <ComboBox x:Name="PortNameComboBox"
+                                      Height="20"
+                                      Margin="2,5"
+                                      IsEnabled="{Binding SerialPortModel.PortNameEnable}"
+                                      ItemsSource="{Binding SerialPortModel.PortNameItemsSource}"
+                                      MouseLeftButtonDown="MainWindow_PortName"
+                                      PreviewMouseLeftButtonDown="MainWindow_PortName"
+                                      SelectedItem="{Binding SerialPortModel.PortName}" />
+                            <ComboBox x:Name="BaudRateComboBox"
+                                      Height="20"
+                                      Margin="2,5"
+                                      IsEditable="True"
+                                      IsEnabled="{Binding SerialPortModel.BaudRateEnable}"
+                                      ItemsSource="{Binding SerialPortModel.BaudRateItemsSource}"
+                                      SelectedItem="{Binding SerialPortModel.BaudRate}" />
+                            <ComboBox x:Name="DataBitsComboBox"
+                                      Height="20"
+                                      Margin="2,5"
+                                      IsEnabled="{Binding SerialPortModel.DataBitsEnable}"
+                                      ItemsSource="{Binding SerialPortModel.DataBitsItemsSource}"
+                                      SelectedItem="{Binding SerialPortModel.DataBits}" />
+                            <ComboBox x:Name="StopBitsComboBox"
+                                      Height="20"
+                                      Margin="2,5"
+                                      IsEnabled="{Binding SerialPortModel.StopBitsEnable}"
+                                      ItemsSource="{Binding SerialPortModel.StopBitsItemsSource}"
+                                      SelectedItem="{Binding SerialPortModel.StopBits}" />
+                            <ComboBox x:Name="PariTypeComboBox"
+                                      Height="20"
+                                      Margin="2,5"
+                                      IsEnabled="{Binding SerialPortModel.PariTypeEnable}"
+                                      ItemsSource="{Binding SerialPortModel.PariTypeItemsSource}"
+                                      SelectedItem="{Binding SerialPortModel.PariType}" />
+                            <Button x:Name="PortAbleButton"
+                                    Height="20"
+                                    Margin="2,5"
+                                    Click="MainWindow_PortAble"
+                                    Content="{Binding SerialPortModel.PortStat}" />
+                            <TextBlock Height="12"
+                                       Margin="2,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="8">
+                                （不打开也能用 发送时自动打开 三秒后自动关闭）
+                            </TextBlock>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ReadAddr"
+                                        IsEnabled="True">
+                                    读取地址
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_WritAddr"
+                                        IsEnabled="True">
+                                    设置地址
+                                </Button>
+                            </Grid>
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     FontWeight="Bold"
+                                     Foreground="#FFCC0000"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     Text="{Binding DLT645CoreModel.CandidateAddr, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     PreviewMouseLeftButtonDown="MainWindow_CandidateAddrAA"
+                                     Text="{Binding Global_CandidateAddrAA, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_CandidateAddrAA" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     PreviewMouseLeftButtonDown="MainWindow_CandidateAddr99"
+                                     Text="{Binding Global_CandidateAddr99, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_CandidateAddr99" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     PreviewMouseLeftButtonDown="MainWindow_CandidateAddr01"
+                                     Text="{Binding Global_CandidateAddr01, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_CandidateAddr01" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     PreviewMouseLeftButtonDown="MainWindow_CandidateAddr02"
+                                     Text="{Binding Global_CandidateAddr02, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_CandidateAddr02" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     PreviewMouseLeftButtonDown="MainWindow_CandidateAddr03"
+                                     Text="{Binding Global_CandidateAddr03, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_CandidateAddr03" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     PreviewMouseLeftButtonDown="MainWindow_CandidateAddr04"
+                                     Text="{Binding Global_CandidateAddr04, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_CandidateAddr04" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     PreviewMouseLeftButtonDown="MainWindow_CandidateAddr05"
+                                     Text="{Binding Global_CandidateAddr05, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_CandidateAddr05" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="12"
+                                     Text="{Binding DLT645CoreModel.SendFramePrmb, UpdateSourceTrigger=PropertyChanged}"
+                                     TextChanged="MainWindow_UpdtManualAsmb" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0"
+                                         Height="20"
+                                         Margin="2,5"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         FontFamily="Courier New"
+                                         FontWeight="Bold"
+                                         Foreground="Gray"
+                                         IsEnabled="True"
+                                         IsUndoEnabled="False"
+                                         MaxLength="8"
+                                         Text="{Binding Global_Password, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Grid.Column="1"
+                                         Height="20"
+                                         Margin="2,5"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         FontFamily="Courier New"
+                                         FontWeight="Bold"
+                                         Foreground="Gray"
+                                         IsEnabled="True"
+                                         IsUndoEnabled="False"
+                                         MaxLength="8"
+                                         Text="{Binding Global_Operator, UpdateSourceTrigger=PropertyChanged}" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0"
+                                         Height="20"
+                                         Margin="2,5"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         FontFamily="Courier New"
+                                         FontWeight="Bold"
+                                         IsEnabled="True"
+                                         IsUndoEnabled="False"
+                                         MaxLength="8"
+                                         Text="{Binding Global_NewPasswordLevelDataId, UpdateSourceTrigger=PropertyChanged}" />
+                                <ComboBox xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                                          Grid.Column="1"
+                                          Height="20"
+                                          Margin="2,5"
+                                          HorizontalContentAlignment="Center"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding Global_NewPasswordLevelItemsSource}"
+                                          SelectedItem="{Binding Global_NewPasswordLevel}">
+                                    <ComboBox.Resources>
+                                        <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">0</sys:Double>
+                                    </ComboBox.Resources>
+                                </ComboBox>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0"
+                                         Height="20"
+                                         Margin="2,5"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         FontFamily="Courier New"
+                                         FontWeight="Bold"
+                                         IsEnabled="True"
+                                         IsUndoEnabled="False"
+                                         MaxLength="8"
+                                         Text="{Binding Global_NewPassword, UpdateSourceTrigger=PropertyChanged}" />
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_PassWord_Alter"
+                                        IsEnabled="True">
+                                    更改密码
+                                </Button>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ComboBox xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                                          Grid.Column="0"
+                                          Height="20"
+                                          Margin="2,5"
+                                          HorizontalContentAlignment="Center"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding Global_NewBaudRateItemsSource}"
+                                          SelectedItem="{Binding Global_NewBaudRate}">
+                                    <ComboBox.Resources>
+                                        <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">0</sys:Double>
+                                    </ComboBox.Resources>
+                                </ComboBox>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_BaudRate_Alter"
+                                        IsEnabled="True">
+                                    更改速率
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <!--<GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />-->
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35*" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="35*" />
+                    </Grid.RowDefinitions>
+                    <GridSplitter Grid.Row="1"
+                                  Height="5"
+                                  HorizontalAlignment="Stretch" />
+                    <GridSplitter Grid.Row="3"
+                                  Height="5"
+                                  HorizontalAlignment="Stretch" />
+                    <Grid Grid.Row="0">
+                        <Border Background="GhostWhite"
+                                BorderBrush="Gainsboro"
+                                BorderThickness="1">
+                            <TabControl Name="tcSample" Margin="10">
+                                <TabItem Header="　组帧　">
+                                    <Border VerticalAlignment="Top" Style="{StaticResource GeneralSlabFontFamily}">
+                                        <StackPanel>
+                                            <DockPanel HorizontalAlignment="Left">
+                                                <TextBox Width="120"
+                                                         Height="20"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Center"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="#FFCC0000"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         MaxLength="12"
+                                                         Text="{Binding ManualAsmb_AddrArea, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmb" />
+                                                <TextBox Width="40"
+                                                         Height="20"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Center"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="OrangeRed"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         MaxLength="2"
+                                                         Text="{Binding ManualAsmb_CtrlArea, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmb" />
+                                                <TextBox Width="80"
+                                                         Height="20"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Center"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="Blue"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         MaxLength="8"
+                                                         Text="{Binding ManualAsmb_DataIdx4, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmb" />
+                                                <TextBox Width="80"
+                                                         Height="20"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Center"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="Gray"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         MaxLength="8"
+                                                         Text="{Binding ManualAsmb_Password, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmb" />
+                                                <TextBox Width="80"
+                                                         Height="20"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Center"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="Gray"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         MaxLength="8"
+                                                         Text="{Binding ManualAsmb_Operator, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmb" />
+                                                <Button Grid.Column="0"
+                                                        Height="20"
+                                                        MinWidth="40"
+                                                        Margin="2,5"
+                                                        Click="MainWindow_DataReverseType"
+                                                        Content="{Binding DataReverseType}" />
+                                                <TextBox Height="20"
+                                                         MinWidth="160"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Left"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="DarkGreen"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         Text="{Binding ManualAsmb_DataPart, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmb" />
+                                            </DockPanel>
+                                            <TextBox Height="20"
+                                                     Margin="2,5"
+                                                     VerticalContentAlignment="Center"
+                                                     IsEnabled="True"
+                                                     PreviewMouseLeftButtonDown="TextBox_TextChanged"
+                                                     Text="{Binding ManualAsmb_ToBeSend, UpdateSourceTrigger=PropertyChanged}"
+                                                     TextChanged="TextBox_TextChanged"
+                                                     UndoLimit="5" />
+                                            <TextBox Height="20"
+                                                     Margin="2,5"
+                                                     VerticalContentAlignment="Center"
+                                                     IsEnabled="True"
+                                                     Text="{Binding ManualAsmb_ToBeSend_S33H, UpdateSourceTrigger=PropertyChanged}"
+                                                     UndoLimit="5" />
+                                            <TextBox Height="20"
+                                                     Margin="2,5"
+                                                     VerticalContentAlignment="Center"
+                                                     IsEnabled="True"
+                                                     Text="{Binding ManualAsmb_ToBeSend_S33H_all, UpdateSourceTrigger=PropertyChanged}"
+                                                     UndoLimit="5" />
+                                            <TextBox Height="20"
+                                                     Margin="2,5"
+                                                     VerticalContentAlignment="Center"
+                                                     IsEnabled="True"
+                                                     Text="{Binding ManualAsmb_ToBeSend_Reverse, UpdateSourceTrigger=PropertyChanged}"
+                                                     UndoLimit="5" />
+                                            <Button Width="100"
+                                                    Height="25"
+                                                    Margin="2,5"
+                                                    Click="MainWindow_SendManualAsmb">
+                                                发送
+                                            </Button>
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem>
+                                <TabItem FontFamily="Courier New" Header="　HEX/STR ">
+                                    <Border VerticalAlignment="Top" Style="{StaticResource GeneralSlabFontFamily}">
+                                        <StackPanel>
+                                            <TextBox Height="50"
+                                                     Margin="2,5"
+                                                     IsEnabled="True"
+                                                     Text="{Binding Convert_HexToString_Hex, UpdateSourceTrigger=PropertyChanged}"
+                                                     UndoLimit="5" />
+                                            <TextBox Height="50"
+                                                     Margin="2,5"
+                                                     IsEnabled="True"
+                                                     Text="{Binding Convert_HexToString_String, UpdateSourceTrigger=PropertyChanged}"
+                                                     UndoLimit="5" />
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem>
+                                <TabItem FontFamily="Courier New" Header="　Epoch ">
+                                    <Border VerticalAlignment="Top" Style="{StaticResource GeneralSlabFontFamily}">
+                                        <DockPanel>
+                                            <StackPanel Width="Auto" HorizontalAlignment="Left">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Grid.Column="0" Width="200">
+                                                        <wfi:WindowsFormsHost Margin="2,5" FontFamily="Courier New">
+                                                            <wf:DateTimePicker x:Name="EpochDateTimePickerUTC"
+                                                                               CustomFormat="yyyy-MM-dd HH:mm:ss"
+                                                                               Format="Custom"
+                                                                               ShowUpDown="True" />
+                                                        </wfi:WindowsFormsHost>
+                                                    </Border>
+                                                    <Button Grid.Column="1"
+                                                            Width="200"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Content="将左侧作为世界时间－转成－时间戳"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_UtcToTimeStamp" />
+                                                </Grid>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border Grid.Column="0" Width="200">
+                                                        <wfi:WindowsFormsHost Margin="2,5" FontFamily="Courier New">
+                                                            <wf:DateTimePicker x:Name="EpochDateTimePickerLocal"
+                                                                               CustomFormat="yyyy-MM-dd HH:mm:ss"
+                                                                               Format="Custom"
+                                                                               ShowUpDown="True" />
+                                                        </wfi:WindowsFormsHost>
+                                                    </Border>
+                                                    <Button Grid.Column="1"
+                                                            Width="200"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Content="将左侧作为本地时间－转成－时间戳"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_LocalToTimeStamp" />
+                                                </Grid>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Grid.Column="0"
+                                                             Width="200"
+                                                             Height="20"
+                                                             Margin="2,5,2,5"
+                                                             HorizontalContentAlignment="Center"
+                                                             VerticalContentAlignment="Center"
+                                                             FontFamily="Courier New"
+                                                             FontWeight="Bold"
+                                                             Foreground="Blue"
+                                                             MaxLength="8"
+                                                             Text="{Binding EpochConverterTimeStamp_INT32, UpdateSourceTrigger=PropertyChanged}" />
+                                                    <TextBox Grid.Column="1"
+                                                             Width="200"
+                                                             Height="20"
+                                                             Margin="2,5,2,5"
+                                                             HorizontalContentAlignment="Center"
+                                                             VerticalContentAlignment="Center"
+                                                             FontFamily="Courier New"
+                                                             FontWeight="Bold"
+                                                             Foreground="Blue"
+                                                             MaxLength="8"
+                                                             Text="{Binding EpochConverterTimeStamp_UINT32, UpdateSourceTrigger=PropertyChanged}" />
+                                                </Grid>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Grid.Column="0"
+                                                             Width="200"
+                                                             Height="20"
+                                                             Margin="2,5,2,5"
+                                                             VerticalContentAlignment="Center"
+                                                             FontFamily="Courier New"
+                                                             Text="{Binding EpochConverterTimeUtc_Max2038, UpdateSourceTrigger=PropertyChanged}" />
+                                                    <TextBox Grid.Column="1"
+                                                             Width="200"
+                                                             Height="20"
+                                                             Margin="2,5,2,5"
+                                                             VerticalContentAlignment="Center"
+                                                             FontFamily="Courier New"
+                                                             Text="{Binding EpochConverterTimeUtc_Max2106, UpdateSourceTrigger=PropertyChanged}" />
+                                                </Grid>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Grid.Column="0"
+                                                             Width="200"
+                                                             Height="20"
+                                                             Margin="2,5,2,5"
+                                                             VerticalContentAlignment="Center"
+                                                             FontFamily="Courier New"
+                                                             Text="{Binding EpochConverterTimeLocal_Max2038, UpdateSourceTrigger=PropertyChanged}" />
+                                                    <TextBox Grid.Column="1"
+                                                             Width="200"
+                                                             Height="20"
+                                                             Margin="2,5,2,5"
+                                                             VerticalContentAlignment="Center"
+                                                             FontFamily="Courier New"
+                                                             Text="{Binding EpochConverterTimeLocal_Max2106, UpdateSourceTrigger=PropertyChanged}" />
+                                                </Grid>
+                                            </StackPanel>
+                                            <StackPanel Width="Auto" HorizontalAlignment="Left">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button Grid.Column="0"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="1970"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_UtcSetTo1970" />
+                                                    <Button Grid.Column="1"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="now"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_UtcSetToNow" />
+                                                    <Button Grid.Column="2"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="2038"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_UtcSetTo2038" />
+                                                    <Button Grid.Column="3"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="2106"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_UtcSetTo2106" />
+                                                </Grid>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button Grid.Column="0"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="1970"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_LocalSetTo1970" />
+                                                    <Button Grid.Column="1"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="now"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_LocalSetToNow" />
+                                                    <Button Grid.Column="2"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="2038"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_LocalSetTo2038" />
+                                                    <Button Grid.Column="3"
+                                                            Width="40"
+                                                            Height="20"
+                                                            Margin="2,5"
+                                                            Content="2106"
+                                                            PreviewMouseLeftButtonUp="MainWindow_EpochConverter_LocalSetTo2106" />
+                                                </Grid>
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </Border>
+                                </TabItem>
+                                <!--<TabItem FontFamily="Courier New" Header="　iPAC　">
+                                    <Border VerticalAlignment="Top">
+                                        <StackPanel>
+                                            <DockPanel HorizontalAlignment="Left">
+                                                <TextBox Width="40"
+                                                         Height="20"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Center"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="#FFCC0000"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         MaxLength="2"
+                                                         Text="{Binding ManualAsmbiPAC_CryptType, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmbiPAC" />
+                                                <TextBox Width="40"
+                                                         Height="20"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Center"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="OrangeRed"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         MaxLength="2"
+                                                         Text="{Binding ManualAsmbiPAC_FrameType, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmbiPAC" />
+                                                <TextBox Height="20"
+                                                         MinWidth="160"
+                                                         Margin="2,5"
+                                                         HorizontalContentAlignment="Left"
+                                                         VerticalContentAlignment="Center"
+                                                         FontFamily="Courier New"
+                                                         FontWeight="Bold"
+                                                         Foreground="DarkGreen"
+                                                         IsEnabled="True"
+                                                         IsUndoEnabled="False"
+                                                         Text="{Binding ManualAsmbiPAC_CryptData, UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="MainWindow_UpdtManualAsmbiPAC" />
+                                            </DockPanel>
+                                            <TextBox Height="50"
+                                                     Margin="2,5"
+                                                     FontFamily="Courier New"
+                                                     IsEnabled="True"
+                                                     Text="{Binding ManualAsmbiPAC_ToBeSend, UpdateSourceTrigger=PropertyChanged}"
+                                                     UndoLimit="5" />
+                                        </StackPanel>
+                                    </Border>
+                                </TabItem>-->
+                                <TabItem Header="　参量　">
+                                    <Border Height="Auto" VerticalAlignment="Top">
+                                        <TreeView Name="treeParameter"
+                                                  Height="Auto"
+                                                  ScrollViewer.CanContentScroll="True"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                  Style="{StaticResource GeneralSlabFontFamily}">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                    <Setter Property="IsExpanded" Value="True" />
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate DataType="{x:Type MenuItem}" ItemsSource="{Binding Items}">
+                                                    <DockPanel>
+                                                        <Button MinWidth="62" Margin="2">
+                                                            <TextBlock VerticalAlignment="Top"
+                                                                       PreviewMouseLeftButtonDown="MainWindow_TreeView"
+                                                                       Text="{Binding Id}" />
+                                                        </Button>
+                                                        <TextBlock MinWidth="347"
+                                                                   Margin="2"
+                                                                   VerticalAlignment="Center"
+                                                                   Text="{Binding Name}" />
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataGet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewGet" TargetUpdated="MainWindow_TreeViewGetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataGet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataSet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewSet" TargetUpdated="MainWindow_TreeViewSetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataSet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                    </DockPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Border>
+                                </TabItem>
+                                <TabItem Header="　变量　">
+                                    <Border Height="Auto" VerticalAlignment="Top">
+                                        <TreeView Name="treeElectric"
+                                                  Height="Auto"
+                                                  ScrollViewer.CanContentScroll="True"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                  Style="{StaticResource GeneralSlabFontFamily}">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                    <Setter Property="IsExpanded" Value="True" />
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate DataType="{x:Type MenuItem}" ItemsSource="{Binding Items}">
+                                                    <DockPanel>
+                                                        <Button MinWidth="62" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeView" Text="{Binding Id}" />
+                                                        </Button>
+                                                        <TextBlock Margin="2,4,2,0" Text="{Binding Name}" />
+                                                    </DockPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Border>
+                                </TabItem>
+                                <TabItem Header="　能量　">
+                                    <Border Height="Auto" VerticalAlignment="Top">
+                                        <TreeView Name="treeEnergy"
+                                                  Height="Auto"
+                                                  ScrollViewer.CanContentScroll="True"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                  Style="{StaticResource GeneralSlabFontFamily}">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                    <Setter Property="IsExpanded" Value="True" />
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate DataType="{x:Type MenuItem}" ItemsSource="{Binding Items}">
+                                                    <DockPanel>
+                                                        <Button MinWidth="62" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeView" Text="{Binding Id}" />
+                                                        </Button>
+                                                        <TextBlock Margin="2,4,2,0" Text="{Binding Name}" />
+                                                    </DockPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Border>
+                                </TabItem>
+                                <TabItem Header="　冻结　">
+                                    <Border Height="Auto" VerticalAlignment="Top">
+                                        <TreeView Name="treeRecord"
+                                                  Height="Auto"
+                                                  ScrollViewer.CanContentScroll="True"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                  Style="{StaticResource GeneralSlabFontFamily}">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                    <Setter Property="IsExpanded" Value="True" />
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate DataType="{x:Type MenuItem}" ItemsSource="{Binding Items}">
+                                                    <DockPanel>
+                                                        <Button MinWidth="62" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeView" Text="{Binding Id}" />
+                                                        </Button>
+                                                        <TextBlock MinWidth="347"
+                                                                   Margin="2"
+                                                                   VerticalAlignment="Center"
+                                                                   Text="{Binding Name}" />
+                                                        <TextBox Width="40"
+                                                                 Margin="2"
+                                                                 HorizontalContentAlignment="Center"
+                                                                 VerticalContentAlignment="Center"
+                                                                 MaxLength="2"
+                                                                 Text="{Binding Index, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataGet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewGet" TargetUpdated="MainWindow_TreeViewGetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataGet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                    </DockPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Border>
+                                </TabItem>
+                                <TabItem Header="　事件　">
+                                    <Border Height="Auto" VerticalAlignment="Top">
+                                        <TreeView Name="treeEvents"
+                                                  Height="Auto"
+                                                  ScrollViewer.CanContentScroll="True"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                  Style="{StaticResource GeneralSlabFontFamily}">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                    <Setter Property="IsExpanded" Value="True" />
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate DataType="{x:Type MenuItem}" ItemsSource="{Binding Items}">
+                                                    <DockPanel>
+                                                        <Button MinWidth="62" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeView" Text="{Binding Id}" />
+                                                        </Button>
+                                                        <TextBlock MinWidth="347"
+                                                                   Margin="2"
+                                                                   VerticalAlignment="Center"
+                                                                   Text="{Binding Name}" />
+                                                        <TextBox Width="40"
+                                                                 Margin="2"
+                                                                 HorizontalContentAlignment="Center"
+                                                                 VerticalContentAlignment="Center"
+                                                                 MaxLength="2"
+                                                                 Text="{Binding Index, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataGet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewGet" TargetUpdated="MainWindow_TreeViewGetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataGet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                    </DockPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Border>
+                                </TabItem>
+                                <TabItem Header="　其他　">
+                                    <Border Height="Auto" VerticalAlignment="Top">
+                                        <TreeView Name="treeOthers"
+                                                  Height="Auto"
+                                                  ScrollViewer.CanContentScroll="True"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                  Style="{StaticResource GeneralSlabFontFamily}">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                    <Setter Property="IsExpanded" Value="True" />
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate DataType="{x:Type MenuItem}" ItemsSource="{Binding Items}">
+                                                    <DockPanel>
+                                                        <Button MinWidth="62" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeView" Text="{Binding Id}" />
+                                                        </Button>
+                                                        <TextBlock MinWidth="347"
+                                                                   Margin="2"
+                                                                   VerticalAlignment="Center"
+                                                                   Text="{Binding Name}" />
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataGet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewGet" TargetUpdated="MainWindow_TreeViewGetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataGet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataSet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewSet" TargetUpdated="MainWindow_TreeViewSetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataSet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                    </DockPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Border>
+                                </TabItem>
+                                <TabItem Header="　扩展　">
+                                    <Border Height="Auto" VerticalAlignment="Top">
+                                        <TreeView Name="treeExtend"
+                                                  Height="Auto"
+                                                  ScrollViewer.CanContentScroll="True"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                                  Style="{StaticResource GeneralSlabFontFamily}">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                    <Setter Property="IsExpanded" Value="True" />
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate DataType="{x:Type MenuItem}" ItemsSource="{Binding Items}">
+                                                    <DockPanel>
+                                                        <Button MinWidth="62" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeView" Text="{Binding Id}" />
+                                                        </Button>
+                                                        <TextBlock MinWidth="347"
+                                                                   Margin="2"
+                                                                   VerticalAlignment="Center"
+                                                                   Text="{Binding Name}" />
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataGet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewGet" TargetUpdated="MainWindow_TreeViewGetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataGet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                        <TextBox Width="64"
+                                                                 Margin="2"
+                                                                 VerticalContentAlignment="Center"
+                                                                 Text="{Binding DataSet, UpdateSourceTrigger=PropertyChanged}" />
+                                                        <Button MaxWidth="53" Margin="2">
+                                                            <TextBlock PreviewMouseLeftButtonDown="MainWindow_TreeViewSet" TargetUpdated="MainWindow_TreeViewSetParse">
+                                                                <TextBlock.Text>
+                                                                    <MultiBinding NotifyOnTargetUpdated="True" StringFormat="{}{0},{1}">
+                                                                        <Binding Path="Id" />
+                                                                        <Binding Path="DataSet" />
+                                                                    </MultiBinding>
+                                                                </TextBlock.Text>
+                                                            </TextBlock>
+                                                        </Button>
+                                                    </DockPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Border>
+                                </TabItem>
+                                <!--<TabItem Header="　校准　">
+                                    <Border VerticalAlignment="Top">
+                                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+                                            <TabControl Margin="10" TabStripPlacement="Left">
+                                                <TabControl.Resources>
+                                                    <Style TargetType="TabItem">
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="TabItem">
+                                                                    <Grid Name="Panel"
+                                                                          HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center">
+                                                                        <ContentPresenter x:Name="ContentSite"
+                                                                                          Margin="3,3,6,3"
+                                                                                          HorizontalAlignment="Center"
+                                                                                          VerticalAlignment="Center"
+                                                                                          ContentSource="Header" />
+                                                                    </Grid>
+                                                                    <ControlTemplate.Triggers>
+                                                                        <Trigger Property="IsSelected" Value="True">
+                                                                            <Setter TargetName="Panel" Property="Background" Value="Gainsboro" />
+                                                                        </Trigger>
+                                                                        <Trigger Property="IsSelected" Value="False">
+                                                                            <Setter TargetName="Panel" Property="Background" Value="White" />
+                                                                        </Trigger>
+                                                                    </ControlTemplate.Triggers>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </TabControl.Resources>
+                                                <TabItem Header="设备校准">
+                                                    <Label>
+                                                        <StackPanel>
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_DateTime">
+                                                                    壳架电流设置
+                                                                </Button>
+                                                            </DockPanel>
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_Calibrate_Measure_Pwr">
+                                                                    交采功率校准
+                                                                </Button>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    A
+                                                                </Button>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    B
+                                                                </Button>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    C
+                                                                </Button>
+                                                            </DockPanel>
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    电压
+                                                                </Button>
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Vol, UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Vol[1], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Vol[2], UpdateSourceTrigger=PropertyChanged}" />
+                                                            </DockPanel>
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    电流
+                                                                </Button>
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="7"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Cur[0], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="7"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Cur[1], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="7"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Cur[2], UpdateSourceTrigger=PropertyChanged}" />
+                                                            </DockPanel>
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    功率
+                                                                </Button>
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="9"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Pwr[0], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="9"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Pwr[1], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="9"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_Pwr[2], UpdateSourceTrigger=PropertyChanged}" />
+                                                            </DockPanel>
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    因数
+                                                                </Button>
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_PwrFactor[0], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_PwrFactor[1], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pwr_PwrFactor[2], UpdateSourceTrigger=PropertyChanged}" />
+                                                            </DockPanel>
+                                                            <DockPanel />
+                                                            <DockPanel />
+                                                            <DockPanel />
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_Calibrate_Measure_Pha">
+                                                                    交采相位校准
+                                                                </Button>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    A
+                                                                </Button>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    B
+                                                                </Button>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    C
+                                                                </Button>
+                                                            </DockPanel>
+                                                            <DockPanel>
+                                                                <Button Width="100"
+                                                                        Height="20"
+                                                                        Margin="2,5"
+                                                                        HorizontalAlignment="Left"
+                                                                        Click="MainWindow_DataRead_Date">
+                                                                    因数
+                                                                </Button>
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pha[0], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pha[1], UpdateSourceTrigger=PropertyChanged}" />
+                                                                <TextBox Grid.Column="0"
+                                                                         Width="100"
+                                                                         Height="20"
+                                                                         Margin="2,5"
+                                                                         HorizontalAlignment="Left"
+                                                                         HorizontalContentAlignment="Center"
+                                                                         VerticalContentAlignment="Center"
+                                                                         IsEnabled="True"
+                                                                         IsUndoEnabled="False"
+                                                                         MaxLength="5"
+                                                                         Text="{Binding DLT645AsmbModel.DLT645_User_Extend_Calibrate_Measure_Pha[2], UpdateSourceTrigger=PropertyChanged}" />
+                                                            </DockPanel>
+                                                            <Button Width="100"
+                                                                    Height="20"
+                                                                    Margin="2,5"
+                                                                    HorizontalAlignment="Left"
+                                                                    Click="MainWindow_DataRead_DateTime">
+                                                                保护电流校准
+                                                            </Button>
+                                                            <Button Width="100"
+                                                                    Height="20"
+                                                                    Margin="2,5"
+                                                                    HorizontalAlignment="Left"
+                                                                    Click="MainWindow_DataRead_DateTime">
+                                                                剩余电流校准
+                                                            </Button>
+                                                            <Button Width="100"
+                                                                    Height="20"
+                                                                    Margin="2,5"
+                                                                    HorizontalAlignment="Left"
+                                                                    Click="MainWindow_DataRead_DateTime">
+                                                                HSDC数据校准
+                                                            </Button>
+                                                        </StackPanel>
+                                                    </Label>
+                                                </TabItem>
+                                            </TabControl>
+                                        </ScrollViewer>
+                                    </Border>
+                                </TabItem>-->
+                            </TabControl>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <!--  输出栏  -->
+                        <Border x:Name="RecvBorder"
+                                Background="GhostWhite"
+                                BorderBrush="Gainsboro"
+                                BorderThickness="1">
+                            <TextBox Grid.Column="0"
+                                     Margin="10,10,10,10"
+                                     Background="White"
+                                     IsUndoEnabled="False"
+                                     SelectionBrush="Black"
+                                     Style="{StaticResource GeneralSlabFontFamily}"
+                                     Text="{Binding ParsInfo, UpdateSourceTrigger=PropertyChanged}" />
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <!--  输出栏  -->
+                        <Border x:Name="TestBorder"
+                                Background="GhostWhite"
+                                BorderBrush="Gainsboro"
+                                BorderThickness="1">
+                            <local:MyScrollViewer Height="Auto"
+                                                  local:ScrollViewerExtensions.AlwaysScrollToEnd="True"
+                                                  CanContentScroll="True"
+                                                  HorizontalScrollBarVisibility="Auto"
+                                                  VerticalScrollBarVisibility="Visible">
+                                <ListView Margin="10"
+                                          ItemsSource="{Binding SerialCommModel.RecordList4Bind}"
+                                          SelectionChanged="ListView_SelectionChanged"
+                                          Style="{StaticResource GeneralSlabFontFamily}">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Width="180" DisplayMemberBinding="{Binding Path=RecordMemberTime}" />
+                                            <GridViewColumn Width="28" DisplayMemberBinding="{Binding Path=RecordMemberTxRx}" />
+                                            <GridViewColumn Width="{Binding SerialCommModel.RecordMemberSize}" DisplayMemberBinding="{Binding Path=RecordMemberData}">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Cursor="Hand"
+                                                                   Foreground="Blue"
+                                                                   Text="{Binding Mail}"
+                                                                   TextDecorations="Underline" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </local:MyScrollViewer>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                <!--<GridSplitter Grid.Column="3" Width="5" />-->
+
+                <Grid Grid.Column="4" HorizontalAlignment="Center">
+                    <!--  侧边栏 右  -->
+                    <Border Width="200"
+                            Background="GhostWhite"
+                            BorderBrush="Gainsboro"
+                            BorderThickness="1"
+                            DockPanel.Dock="Right">
+                        <StackPanel Margin="10" Style="{StaticResource GeneralSlabFontFamily}">
+                            <wfi:WindowsFormsHost Margin="2,5" FontFamily="Courier New">
+                                <wf:DateTimePicker x:Name="InputDateTimePicker"
+                                                   CustomFormat="yyyy-MM-dd HH:mm:ss"
+                                                   Format="Custom"
+                                                   ShowUpDown="True" />
+                            </wfi:WindowsFormsHost>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_CaliTimeType"
+                                        Content="{Binding CaliTimeType}" />
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_CaliAddrType"
+                                        Content="{Binding CaliAddrType}" />
+                                <Button Grid.Column="2"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_CaliMilliSecondType"
+                                        Content="{Binding CaliMilliSecondType}" />
+                            </Grid>
+                            <Button Grid.Column="0"
+                                    Height="20"
+                                    Margin="2,5"
+                                    Click="MainWindow_TimeCali_SysDateTime"
+                                    IsEnabled="True">
+                                校时命令
+                            </Button>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaGet_DateNow"
+                                        IsEnabled="True">
+                                    当前日期
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaGet_TimeNow"
+                                        IsEnabled="True">
+                                    当前时间
+                                </Button>
+                            </Grid>
+                            <Separator Height="10" Visibility="Hidden" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="8"
+                                     Text="{Binding FreezeCmdData, UpdateSourceTrigger=PropertyChanged}" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_DataForz"
+                                        IsEnabled="True">
+                                    普通冻结
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_DataForz_Broad"
+                                        IsEnabled="True">
+                                    广播冻结
+                                </Button>
+                            </Grid>
+                            <Separator Height="10" Visibility="Hidden" />
+                            <TextBox Height="20"
+                                     Margin="2,5"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="Courier New"
+                                     IsEnabled="True"
+                                     IsUndoEnabled="False"
+                                     MaxLength="8"
+                                     Text="{Binding EventsClearDataId, UpdateSourceTrigger=PropertyChanged}" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ComboBox xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                                          Grid.Column="0"
+                                          Height="20"
+                                          Margin="2,5"
+                                          HorizontalContentAlignment="Center"
+                                          IsEnabled="True"
+                                          SelectedItem="全部事件">
+                                    <ComboBox.Resources>
+                                        <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">0</sys:Double>
+                                    </ComboBox.Resources>
+                                    全部事件
+                                </ComboBox>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_EvntData_Clear"
+                                        IsEnabled="True">
+                                    事件清零
+                                </Button>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_DmndData_Clear"
+                                        IsEnabled="True">
+                                    需量清零
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_MetrData_Clear"
+                                        IsEnabled="True">
+                                    数据清零
+                                </Button>
+                            </Grid>
+                            <Separator Height="10" Visibility="Hidden" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0"
+                                         Height="20"
+                                         Margin="2,5"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         FontFamily="Courier New"
+                                         FontWeight="Bold"
+                                         Foreground="Blue"
+                                         IsEnabled="True"
+                                         IsUndoEnabled="False"
+                                         MaxLength="8"
+                                         Text="{Binding Global_DataIdx4, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Grid.Column="1"
+                                         Height="20"
+                                         Margin="2,5"
+                                         HorizontalContentAlignment="Center"
+                                         VerticalContentAlignment="Center"
+                                         FontFamily="Courier New"
+                                         IsEnabled="True"
+                                         IsUndoEnabled="False"
+                                         MaxLength="400"
+                                         Text="{Binding Global_DataArea, UpdateSourceTrigger=PropertyChanged}" />
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ReadData"
+                                        IsEnabled="True">
+                                    读取数据
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_WritData"
+                                        IsEnabled="True">
+                                    写入数据
+                                </Button>
+                            </Grid>
+                            <Separator Height="10" Visibility="Hidden" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaSet_Reboot"
+                                        IsEnabled="True">
+                                    设备重启
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaSet_ResetFactory"
+                                        IsEnabled="True">
+                                    整机重置
+                                </Button>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaSet_ResetPara_ALL"
+                                        IsEnabled="True">
+                                    参数重置
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaSet_ClearData_ALL"
+                                        IsEnabled="True">
+                                    数据重置
+                                </Button>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaSet_ClearData_LOG"
+                                        IsEnabled="True">
+                                    日志重置
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaSet_ClearData_LOG"
+                                        IsEnabled="True">
+                                    日志重置
+                                </Button>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="89" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaGet_SoftwareVersion"
+                                        IsEnabled="True">
+                                    软件版本
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Height="20"
+                                        Margin="2,5"
+                                        Click="MainWindow_ParaGet_HardwareVersion"
+                                        IsEnabled="True">
+                                    硬件版本
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

@@ -1,0 +1,538 @@
+{
+    "标准协议": [
+        {
+            "id": "0501FF01",
+            "name": "《标准协议》瞬时冻结（数据块）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "冻结时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "正向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                },
+                {
+                    "name": "反向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                },
+                {
+                    "name": "组合无功电能（c1）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "组合无功电能（c2）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q1）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q2）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q3）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q4）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "正向有功最大需量",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "正向有功最大需量发生时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "反向有功最大需量",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "反向有功最大需量发生时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "变量：有功功率（合相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ａ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ｂ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ｃ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：无功功率（合相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ａ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ｂ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ｃ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                }
+            ]
+        },
+        {
+            "id": "0504FF01",
+            "name": "《标准协议》整点冻结（数据块）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "冻结时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "正向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                },
+                {
+                    "name": "反向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                }
+            ]
+        },
+        {
+            "id": "0506FF01",
+            "name": "《标准协议》每日冻结（数据块）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "冻结时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "正向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                },
+                {
+                    "name": "反向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                },
+                {
+                    "name": "组合无功电能（c1）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "组合无功电能（c2）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q1）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q2）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q3）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q4）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "正向有功最大需量",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "正向有功最大需量发生时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "反向有功最大需量",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "反向有功最大需量发生时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "变量：有功功率（合相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ａ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ｂ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ｃ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：无功功率（合相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ａ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ｂ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ｃ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                }
+            ]
+        },
+        {
+            "id": "0507FF01",
+            "name": "《标准协议》每月冻结（数据块）",
+            "type": "block",
+            "data": [
+                {
+                    "name": "冻结时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "正向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                },
+                {
+                    "name": "反向有功电能（总）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kWh"
+                },
+                {
+                    "name": "组合无功电能（c1）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "组合无功电能（c2）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q1）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q2）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q3）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "象限无功电能（q4）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXXXX.XX"
+                    ],
+                    "unit": "kvarh"
+                },
+                {
+                    "name": "正向有功最大需量",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "正向有功最大需量发生时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "反向有功最大需量",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "反向有功最大需量发生时间",
+                    "type": "time",
+                    "data": "YYMMDDhhmm"
+                },
+                {
+                    "name": "变量：有功功率（合相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ａ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ｂ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：有功功率（Ｃ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kW"
+                },
+                {
+                    "name": "变量：无功功率（合相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ａ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ｂ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                },
+                {
+                    "name": "变量：无功功率（Ｃ相）",
+                    "type": "bcd",
+                    "data": [
+                        "XXXX.XXXX"
+                    ],
+                    "unit": "kvar"
+                }
+            ]
+        },
+        {
+            "null": null
+        }
+    ],
+    "扩展协议": [
+        {
+            "null": null
+        }
+    ]
+}

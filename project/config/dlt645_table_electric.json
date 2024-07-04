@@ -1,0 +1,732 @@
+{
+    "标准协议": [
+        {
+            "id": "02010100",
+            "name": "《标准协议》当前电压（Ａ相）（XXX.X）",
+            "type": "bcd",
+            "data": "XXX.X",
+            "unit": "V"
+        },
+        {
+            "id": "02010200",
+            "name": "《标准协议》当前电压（Ｂ相）（XXX.X）",
+            "type": "bcd",
+            "data": "XXX.X",
+            "unit": "V"
+        },
+        {
+            "id": "02010300",
+            "name": "《标准协议》当前电压（Ｃ相）（XXX.X）",
+            "type": "bcd",
+            "data": "XXX.X",
+            "unit": "V"
+        },
+        {
+            "id": "0201FF00",
+            "name": "《标准协议》当前电压（整块）（XXX.X）　",
+            "type": "bcd",
+            "data": [
+                "XXX.X",
+                "XXX.X",
+                "XXX.X"
+            ],
+            "unit": "V"
+        },
+        {
+            "id": "02020100",
+            "name": "《标准协议》当前电流（Ａ相）（XXX.XXX）",
+            "type": "bcd",
+            "data": "XXX.XXX",
+            "unit": "A"
+        },
+        {
+            "id": "02020200",
+            "name": "《标准协议》当前电流（Ｂ相）（XXX.XXX）",
+            "type": "bcd",
+            "data": "XXX.XXX",
+            "unit": "A"
+        },
+        {
+            "id": "02020300",
+            "name": "《标准协议》当前电流（Ｃ相）（XXX.XXX）",
+            "type": "bcd",
+            "data": "XXX.XXX",
+            "unit": "A"
+        },
+        {
+            "id": "0202FF00",
+            "name": "《标准协议》当前电流（整块）（XXX.XXX）　",
+            "type": "bcd",
+            "data": [
+                "XXX.XXX",
+                "XXX.XXX",
+                "XXX.XXX"
+            ],
+            "unit": "A"
+        },
+        {
+            "id": "02030000",
+            "name": "《标准协议》有功功率（合相）（XX.XXXX kW）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "02030100",
+            "name": "《标准协议》有功功率（Ａ相）（XX.XXXX kW）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "02030200",
+            "name": "《标准协议》有功功率（Ｂ相）（XX.XXXX kW）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "02030300",
+            "name": "《标准协议》有功功率（Ｃ相）（XX.XXXX kW）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "0203FF00",
+            "name": "《标准协议》有功功率（整块）（XX.XXXX kW）　",
+            "type": "bcd",
+            "data": [
+                "XX.XXXX",
+                "XX.XXXX",
+                "XX.XXXX",
+                "XX.XXXX"
+            ],
+            "unit": "kW"
+        },
+        {
+            "id": "02040000",
+            "name": "《标准协议》无功功率（合相）（XX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02040100",
+            "name": "《标准协议》无功功率（Ａ相）（XX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02040200",
+            "name": "《标准协议》无功功率（Ｂ相）（XX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02040300",
+            "name": "《标准协议》无功功率（Ｃ相）（XX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "0204FF00",
+            "name": "《标准协议》无功功率（整块）（XX.XXXX kvar）　",
+            "type": "bcd",
+            "data": [
+                "XX.XXXX",
+                "XX.XXXX",
+                "XX.XXXX",
+                "XX.XXXX"
+            ],
+            "unit": "kvar"
+        },
+        {
+            "id": "02050000",
+            "name": "《标准协议》视在功率（合相）（XX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02050100",
+            "name": "《标准协议》视在功率（Ａ相）（XX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02050200",
+            "name": "《标准协议》视在功率（Ｂ相）（XX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02050300",
+            "name": "《标准协议》视在功率（Ｃ相）（XX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "0205FF00",
+            "name": "《标准协议》视在功率（整块）（XX.XXXX kVA）　",
+            "type": "bcd",
+            "data": [
+                "XX.XXXX",
+                "XX.XXXX",
+                "XX.XXXX",
+                "XX.XXXX"
+            ],
+            "unit": "kVA"
+        },
+        {
+            "id": "02060000",
+            "name": "《标准协议》功率因数（合相）",
+            "type": "bcd",
+            "data": "X.XXX",
+            "unit": ""
+        },
+        {
+            "id": "02060100",
+            "name": "《标准协议》功率因数（Ａ相）",
+            "type": "bcd",
+            "data": "X.XXX",
+            "unit": ""
+        },
+        {
+            "id": "02060200",
+            "name": "《标准协议》功率因数（Ｂ相）",
+            "type": "bcd",
+            "data": "X.XXX",
+            "unit": ""
+        },
+        {
+            "id": "02060300",
+            "name": "《标准协议》功率因数（Ｃ相）",
+            "type": "bcd",
+            "data": "X.XXX",
+            "unit": ""
+        },
+        {
+            "id": "0206FF00",
+            "name": "《标准协议》功率因数（整块）　",
+            "type": "bcd",
+            "data": [
+                "X.XXX",
+                "X.XXX",
+                "X.XXX",
+                "X.XXX"
+            ],
+            "unit": ""
+        },
+        {
+            "id": "02080100",
+            "name": "《标准协议》电压波形失真度（Ａ相）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "02080200",
+            "name": "《标准协议》电压波形失真度（Ｂ相）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "02080300",
+            "name": "《标准协议》电压波形失真度（Ｃ相）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "0208FF00",
+            "name": "《标准协议》电压波形失真度（整块）　",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "02090100",
+            "name": "《标准协议》电流波形失真度（Ａ相）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "02090200",
+            "name": "《标准协议》电流波形失真度（Ｂ相）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "02090300",
+            "name": "《标准协议》电流波形失真度（Ｃ相）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "0209FF00",
+            "name": "《标准协议》电流波形失真度（整块）　",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "020A0101",
+            "name": "《标准协议》电压谐波含量（Ａ相）（1次）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "020A01FF",
+            "name": "《标准协议》电压谐波含量（Ａ相）（N次）",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "020A0201",
+            "name": "《标准协议》电压谐波含量（Ｂ相）（1次）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "020A02FF",
+            "name": "《标准协议》电压谐波含量（Ｂ相）（N次）",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "020A0301",
+            "name": "《标准协议》电压谐波含量（Ｃ相）（1次）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "020A03FF",
+            "name": "《标准协议》电压谐波含量（Ｃ相）（N次）",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "020B0101",
+            "name": "《标准协议》电流谐波含量（Ａ相）（1次）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "020B01FF",
+            "name": "《标准协议》电流谐波含量（Ａ相）（N次）",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "020B0201",
+            "name": "《标准协议》电流谐波含量（Ｂ相）（1次）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "020B02FF",
+            "name": "《标准协议》电流谐波含量（Ｂ相）（N次）",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "020B0301",
+            "name": "《标准协议》电流谐波含量（Ｃ相）（1次）",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "%"
+        },
+        {
+            "id": "020B03FF",
+            "name": "《标准协议》电流谐波含量（Ｃ相）（N次）",
+            "type": "bcd",
+            "data": [
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX",
+                "XX.XX"
+            ],
+            "unit": "%"
+        },
+        {
+            "id": "02800001",
+            "name": "《标准协议》零线电流",
+            "type": "bcd",
+            "data": "XXX.XXX",
+            "unit": "A"
+        },
+        {
+            "id": "02800002",
+            "name": "《标准协议》电网频率",
+            "type": "bcd",
+            "data": "XX.XX",
+            "unit": "Hz"
+        },
+        {
+            "id": "02800007",
+            "name": "《标准协议》表内温度",
+            "type": "bcd",
+            "data": "XXX.X",
+            "unit": "℃"
+        },
+        {
+            "null": null
+        }
+    ],
+    "扩展协议": [
+        {
+            "id": "02920200",
+            "name": "《扩展协议》当前电流（Ａ相）（XXXXX.X）",
+            "type": "bcd",
+            "data": "XXXXX.X",
+            "unit": "A"
+        },
+        {
+            "id": "02920300",
+            "name": "《扩展协议》当前电流（Ｂ相）（XXXXX.X）",
+            "type": "bcd",
+            "data": "XXXXX.X",
+            "unit": "A"
+        },
+        {
+            "id": "02920400",
+            "name": "《扩展协议》当前电流（Ｃ相）（XXXXX.X）",
+            "type": "bcd",
+            "data": "XXXXX.X",
+            "unit": "A"
+        },
+        {
+            "id": "02930000",
+            "name": "《扩展协议》有功功率（合相）（XXXX.XX kW）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kW"
+        },
+        {
+            "id": "02930100",
+            "name": "《扩展协议》有功功率（Ａ相）（XXXX.XX kW）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kW"
+        },
+        {
+            "id": "02930200",
+            "name": "《扩展协议》有功功率（Ｂ相）（XXXX.XX kW）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kW"
+        },
+        {
+            "id": "02930300",
+            "name": "《扩展协议》有功功率（Ｃ相）（XXXX.XX kW）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kW"
+        },
+        {
+            "id": "0293FF00",
+            "name": "《扩展协议》有功功率（整块）（XXXX.XX kW）　",
+            "type": "bcd",
+            "data": [
+                "XXXX.XX",
+                "XXXX.XX",
+                "XXXX.XX",
+                "XXXX.XX"
+            ],
+            "unit": "kW"
+        },
+        {
+            "id": "02940000",
+            "name": "《扩展协议》无功功率（合相）（XXXX.XX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02940100",
+            "name": "《扩展协议》无功功率（Ａ相）（XXXX.XX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02940200",
+            "name": "《扩展协议》无功功率（Ｂ相）（XXXX.XX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02940300",
+            "name": "《扩展协议》无功功率（Ｃ相）（XXXX.XX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kvar"
+        },
+        {
+            "id": "0294FF00",
+            "name": "《扩展协议》无功功率（整块）（XXXX.XX kvar）　",
+            "type": "bcd",
+            "data": [
+                "XXXX.XX",
+                "XXXX.XX",
+                "XXXX.XX",
+                "XXXX.XX"
+            ],
+            "unit": "kvar"
+        },
+        {
+            "id": "02950000",
+            "name": "《扩展协议》视在功率（合相）（XXXX.XX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02950100",
+            "name": "《扩展协议》视在功率（Ａ相）（XXXX.XX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02950200",
+            "name": "《扩展协议》视在功率（Ｂ相）（XXXX.XX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02950300",
+            "name": "《扩展协议》视在功率（Ｃ相）（XXXX.XX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XX",
+            "unit": "kVA"
+        },
+        {
+            "id": "0295FF00",
+            "name": "《扩展协议》视在功率（整块）（XXXX.XX kVA）　",
+            "type": "bcd",
+            "data": [
+                "XXXX.XX",
+                "XXXX.XX",
+                "XXXX.XX",
+                "XXXX.XX"
+            ],
+            "unit": "kVA"
+        },
+        {
+            "id": "02A30000",
+            "name": "《扩展协议》有功功率（合相）（XXXX.XXXX kW）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "02A30100",
+            "name": "《扩展协议》有功功率（Ａ相）（XXXX.XXXX kW）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "02A30200",
+            "name": "《扩展协议》有功功率（Ｂ相）（XXXX.XXXX kW）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "02A30300",
+            "name": "《扩展协议》有功功率（Ｃ相）（XXXX.XXXX kW）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kW"
+        },
+        {
+            "id": "02A3FF00",
+            "name": "《扩展协议》有功功率（整块）（XXXX.XXXX kW）　",
+            "type": "bcd",
+            "data": [
+                "XXXX.XXXX",
+                "XXXX.XXXX",
+                "XXXX.XXXX",
+                "XXXX.XXXX"
+            ],
+            "unit": "kW"
+        },
+        {
+            "id": "02A40000",
+            "name": "《扩展协议》无功功率（合相）（XXXX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02A40100",
+            "name": "《扩展协议》无功功率（Ａ相）（XXXX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02A40200",
+            "name": "《扩展协议》无功功率（Ｂ相）（XXXX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02A40300",
+            "name": "《扩展协议》无功功率（Ｃ相）（XXXX.XXXX kvar）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kvar"
+        },
+        {
+            "id": "02A4FF00",
+            "name": "《扩展协议》无功功率（整块）（XXXX.XXXX kvar）　",
+            "type": "bcd",
+            "data": [
+                "XXXX.XXXX",
+                "XXXX.XXXX",
+                "XXXX.XXXX",
+                "XXXX.XXXX"
+            ],
+            "unit": "kvar"
+        },
+        {
+            "id": "02A50000",
+            "name": "《扩展协议》视在功率（合相）（XXXX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02A50100",
+            "name": "《扩展协议》视在功率（Ａ相）（XXXX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02A50200",
+            "name": "《扩展协议》视在功率（Ｂ相）（XXXX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02A50300",
+            "name": "《扩展协议》视在功率（Ｃ相）（XXXX.XXXX kVA）",
+            "type": "bcd",
+            "data": "XXXX.XXXX",
+            "unit": "kVA"
+        },
+        {
+            "id": "02A5FF00",
+            "name": "《扩展协议》视在功率（整块）（XXXX.XXXX kVA）　",
+            "type": "bcd",
+            "data": [
+                "XXXX.XXXX",
+                "XXXX.XXXX",
+                "XXXX.XXXX",
+                "XXXX.XXXX"
+            ],
+            "unit": "kVA"
+        },
+        {
+            "null": null
+        }
+    ]
+}

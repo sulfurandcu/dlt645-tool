@@ -1,0 +1,36 @@
+{
+  "ViewModel.SerialPort.PortName": "COM5",
+  "ViewModel.SerialPort.BaudRate": 115200,
+  "ViewModel.SerialPort.DataBits": 8,
+  "ViewModel.SerialPort.StopBits": 1,
+  "ViewModel.SerialPort.Parity": 2,
+  "ViewModel.LinkLayer.AddressA": "AAAAAAAAAAAA",
+  "ViewModel.LinkLayer.Address9": "999999999999",
+  "ViewModel.LinkLayer.Address1": "111111111111",
+  "ViewModel.LinkLayer.Address2": "222222222222",
+  "ViewModel.LinkLayer.Address3": "333333333333",
+  "ViewModel.LinkLayer.Address4": "444444444444",
+  "ViewModel.LinkLayer.Address5": "555555555555",
+  "ViewModel.LinkLayer.Password": "00000000",
+  "ViewModel.LinkLayer.Operator": "00000000",
+  "ViewModel.LinkLayer.Preamble": "FEFE",
+  "Protocol": [
+    "\u6807\u51C6\u534F\u8BAE",
+    "\u6269\u5C55\u534F\u8BAE"
+  ],
+  "LastN": [
+    "03",
+    "05"
+  ],
+  "NotLastN": [
+    "03010000",
+    "03020000",
+    "03030000",
+    "03040000",
+    "03090000",
+    "030A0000",
+    "03300100",
+    "03300200",
+    "03300300"
+  ]
+}
